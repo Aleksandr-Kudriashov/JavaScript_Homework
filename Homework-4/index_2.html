@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="" href="css/style.css">
+</head>
+<body>
+<form action="#" class="some" id="form">
+    <div>
+        <label>
+            Имя <br>
+            <input type="text" name="name" id="name">
+        </label>
+    </div>
+    <div>
+        <label>
+            Телефон <br>
+            <input type="tel" name="phone" id="phone">
+        </label>
+    </div>
+    <div>
+        <label>
+            Ваш E-mail <br>
+            <input type="email" name="email" id="email">
+        </label>
+    </div>
+    <button id="btn">Отправить</button>
+</form>
+<script src="js/script.js"></script>
+<script>
+    //вешаем обработчик на форму
+    document.getElementById('form').addEventListener('submit', event => {
+        let valid = new Validator('form');
+        if(!valid.valid){
+            event.preventDefault();
+        }
+    }
+</script>
+</body>
+</html>
